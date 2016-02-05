@@ -1,0 +1,11 @@
+%h2 All Schools
+
+%ul#actions
+  %li= link_to '+ Add School', new_admin_school_path, :class => 'fancybox'
+
+%table.striped{:width => '100%'}
+  %tr
+    %th Name
+  - @schools.each do |school|
+    %tr
+      %td= link_to school.name, admin_school_path(school)

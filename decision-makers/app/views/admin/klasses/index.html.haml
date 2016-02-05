@@ -1,0 +1,13 @@
+%h2 All Classes
+
+%ul#actions
+  %li= link_to '+ Add Class', new_admin_klass_path, :class => 'fancybox'
+
+%table.striped{:width => '100%'}
+  %tr
+    %th{:width => '330'} Name
+    %th Default Password
+  - @klasses.each do |klass|
+    %tr
+      %td= link_to klass.name, admin_klass_path(klass)
+      %td= klass.default_password

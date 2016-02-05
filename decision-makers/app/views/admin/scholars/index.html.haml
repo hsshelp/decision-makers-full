@@ -1,0 +1,21 @@
+= render 'search'
+
+%h2 All Scholars
+
+%ul#actions
+  %li= link_to '+ Add Scholar', new_admin_scholar_path, :class => 'fancybox'
+
+%table.striped{:width => '100%'}
+  %tr
+    %th{:width => '175'} First Name
+    %th{:width => '225'} Last Name
+    %th Username
+    %th{:width => '150'} Class
+  - @scholars.each do |scholar|
+    %tr
+      %td= link_to scholar.first_name, admin_scholar_path(scholar)
+      %td= scholar.last_name
+      %td= scholar.username
+      %td= scholar.klass.name
+
+= paginate(@scholars)

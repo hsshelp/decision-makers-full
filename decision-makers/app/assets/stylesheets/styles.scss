@@ -1,0 +1,292 @@
+@import 'base';
+@include reset;
+
+// colors
+$yellow: #ffff9a;
+$red: #993333;
+$green: #b3c98b;
+$dark-green: #2e430a;
+$blue: #6a81a1;
+$dark-blue: #003366;
+
+
+body {
+  background: #000;
+  color: #000;
+  font: 12px/17px verdana, geneva, arial, helvetica, sans-serif;
+}
+
+strong {
+  font-weight: bold;
+}
+
+#header {
+  background: #000 url('/images/header.jpg') no-repeat;
+  height: 180px;
+  width: 740px;
+
+  h1 {
+    display: none;
+  }
+
+  ul#public_nav {
+    float: right;
+    position: relative;
+    top: 100px;
+
+    li {
+      float: left;
+
+      a {
+        border-left: 1px solid $dark-blue;
+        color: $dark-blue;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 0 5px;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &:first-child {
+        a {
+          border: none;
+        }
+      }
+
+      &:last-child {
+        a {
+          padding-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+#wrapper {
+  margin: 0 auto;
+  width: 740px;
+
+  #content {
+    background: #fff url('/images/background.jpg') repeat-y;
+    min-height: 375px;
+    position: relative;
+    width: 740px;
+
+    #inner {
+      float: right;
+      padding: 10px;
+      margin: -50px 0 0 130px;
+      width: 595px;
+    }
+
+    a {
+      color: $blue;
+      font-weight: bold;
+      text-decoration: underline;
+
+      &:hover {
+        color: $dark-blue;
+      }
+    }
+
+    ul {
+      margin: 10px 20px;
+
+      li {
+        margin: 0 0 0 20px;
+      }
+    }
+
+    ol {
+      list-style-type: decimal;
+      margin: 10px 20px;
+
+      li {
+        margin: 0 0 0 20px;
+      }
+    }
+
+    ul.pencil li {
+      list-style-image: url('/images/pencil.gif');
+    }
+
+    ul.dialogue li {
+      list-style-image: url('/images/dialogue.gif');
+    }
+
+    ul.clock li {
+      list-style-image: url('/images/clock.gif');
+    }
+
+    ul.clipboard li {
+      list-style-image: url('/images/clipboard.gif');
+    }
+
+    ul.check li {
+      list-style-image: url('/images/check.gif');
+    }
+  }
+}
+
+h2 {
+  color: $dark-blue;
+  font-family: times;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+}
+
+h3 {
+  color: $red;
+  font-family: times;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0 10px 0;
+}
+
+p {
+  margin-top: 10px;
+}
+
+form {
+  table tr td {
+    background: #ccc;
+  }
+}
+
+//
+//
+// Steps
+//
+//
+#steps {
+  margin-top: 20px;
+
+  li a {
+    display: block;
+    float: left;
+    font-size: 0;
+    height: 91px;
+    width: 73px;
+  }
+
+  @for $i from 1 through 7 {
+    #step-#{$i} {
+      background: url('/images/steps/#{$i}.gif') no-repeat;
+
+      &:hover {
+        background: url('/images/steps/#{$i}-down.gif') no-repeat;
+      }
+    }
+  }
+}
+
+ul#side-steps {
+  float: left;
+  left: -20px;
+  position: absolute;
+
+  li {
+    a {
+      color: $dark-blue !important;
+      display: block;
+      font-weight: bold;
+      margin-top: 20px;
+      text-decoration: none !important;
+    }
+
+    span {
+      color: $blue;
+    }
+  }
+}
+
+table#overview {
+  h3 {
+    font-size: 14px;
+  }
+
+  tr td {
+    padding: 0 0 15px 0;
+    vertical-align: top;
+  }
+}
+
+#footer {
+  background: $blue;
+  color: #fff;
+  font-size: 10px;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 5px 0 0;
+  text-align: right;
+}
+
+.clear {
+  height: 10px;
+  clear: both;
+}
+
+.none {
+  display: none;
+}
+
+.left {
+  float: left;
+  margin-right: 20px;
+}
+
+.right {
+  float: right;
+  margin-left: 20px;
+}
+
+//
+//
+// Snapshots
+//
+//
+.snapshot {
+  display: none;
+
+  .partial-submit-button {
+    margin-left: 150px;
+  }
+}
+
+
+#tips {
+  float: left;
+  margin-left: -125px;
+  padding: 50px 0 0 0;
+  width: 100px;
+}
+
+
+
+//
+//
+// Flash
+//
+//
+.alert {
+  border: 1px solid $red;
+  background: $red*4;
+  color: $red;
+  float: right;
+  margin: 0 0 20px 0;
+  padding: 10px;
+  width: 570px;
+}
+
+.notice {
+  border: 1px solid $yellow/2;
+  background: $yellow;
+  float: right;
+  margin: 0 0 20px 0;
+  padding: 10px;
+  width: 570px;
+}

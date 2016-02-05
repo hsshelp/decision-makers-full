@@ -1,0 +1,40 @@
+= form_tag submit_profile_path(@profile) do
+  #snapshots
+    .snapshot
+      %h2= @profile.name
+      = @profile.text.html_safe unless @profile.text.nil?
+    - @profile.snapshots.each_with_index do |snapshot, i|
+      .snapshot
+        = render :partial => 'tips', :locals => {:snapshot => snapshot}
+        %h2= snapshot.name
+        %h3= snapshot.subtitle
+        .snapshot_text= snapshot.text.html_safe
+
+        - snapshot.grouped_questions.each_pair do |category, questions|
+          - if questions.first.is_codeable?
+            = render :partial => 'codeable_question', :locals => {:category => category, :questions => questions}
+          - else
+            = render :partial => 'uncodeable_question', :locals => {:questions => questions}
+
+:css
+  textarea {
+    font-size: 16px;
+    height: 100px;
+    padding: 10px;
+    width: 250px;
+  }
+
+  table {
+    margin: 0 auto;
+    width: 500px;
+  }
+
+  table tr td {
+    padding: 10px;
+  }
+
+:javascript
+  // call our custom javascript paginator
+  window.onload = function() {
+    paginateSnapshots();
+  }

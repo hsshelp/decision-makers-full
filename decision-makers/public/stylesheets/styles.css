@@ -1,0 +1,237 @@
+/*
+  http://meyerweb.com/eric/tools/css/reset/
+  v2.0 | 20110126
+  License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tfoot, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+:focus {
+  outline: 0; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  background: #000;
+  color: #000;
+  font: 12px/17px verdana, geneva, arial, helvetica, sans-serif; }
+
+strong {
+  font-weight: bold; }
+
+#header {
+  background: black url("/images/header.jpg") no-repeat;
+  height: 180px;
+  width: 740px; }
+  #header h1 {
+    display: none; }
+  #header ul#public_nav {
+    float: right;
+    position: relative;
+    top: 100px; }
+    #header ul#public_nav li {
+      float: left; }
+      #header ul#public_nav li a {
+        border-left: 1px solid #003366;
+        color: #003366;
+        font-size: 12px;
+        font-weight: bold;
+        padding: 0 5px;
+        text-decoration: none; }
+        #header ul#public_nav li a:hover {
+          text-decoration: underline; }
+      #header ul#public_nav li:first-child a {
+        border: none; }
+      #header ul#public_nav li:last-child a {
+        padding-right: 10px; }
+
+#wrapper {
+  margin: 0 auto;
+  width: 740px; }
+  #wrapper #content {
+    background: white url("/images/background.jpg") repeat-y;
+    min-height: 375px;
+    position: relative;
+    width: 740px; }
+    #wrapper #content #inner {
+      float: right;
+      padding: 10px;
+      margin: -50px 0 0 130px;
+      width: 595px; }
+    #wrapper #content a {
+      color: #6a81a1;
+      font-weight: bold;
+      text-decoration: underline; }
+      #wrapper #content a:hover {
+        color: #003366; }
+    #wrapper #content ul {
+      margin: 10px 20px; }
+      #wrapper #content ul li {
+        margin: 0 0 0 20px; }
+    #wrapper #content ol {
+      list-style-type: decimal;
+      margin: 10px 20px; }
+      #wrapper #content ol li {
+        margin: 0 0 0 20px; }
+    #wrapper #content ul.pencil li {
+      list-style-image: url("/images/pencil.gif"); }
+    #wrapper #content ul.dialogue li {
+      list-style-image: url("/images/dialogue.gif"); }
+    #wrapper #content ul.clock li {
+      list-style-image: url("/images/clock.gif"); }
+    #wrapper #content ul.clipboard li {
+      list-style-image: url("/images/clipboard.gif"); }
+    #wrapper #content ul.check li {
+      list-style-image: url("/images/check.gif"); }
+
+h2 {
+  color: #003366;
+  font-family: times;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 20px 0; }
+
+h3 {
+  color: #993333;
+  font-family: times;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0 10px 0; }
+
+p {
+  margin-top: 10px; }
+
+form table tr td {
+  background: #ccc; }
+
+#steps {
+  margin-top: 20px; }
+  #steps li a {
+    display: block;
+    float: left;
+    font-size: 0;
+    height: 91px;
+    width: 73px; }
+  #steps #step-1 {
+    background: url("/images/steps/1.gif") no-repeat; }
+    #steps #step-1:hover {
+      background: url("/images/steps/1-down.gif") no-repeat; }
+  #steps #step-2 {
+    background: url("/images/steps/2.gif") no-repeat; }
+    #steps #step-2:hover {
+      background: url("/images/steps/2-down.gif") no-repeat; }
+  #steps #step-3 {
+    background: url("/images/steps/3.gif") no-repeat; }
+    #steps #step-3:hover {
+      background: url("/images/steps/3-down.gif") no-repeat; }
+  #steps #step-4 {
+    background: url("/images/steps/4.gif") no-repeat; }
+    #steps #step-4:hover {
+      background: url("/images/steps/4-down.gif") no-repeat; }
+  #steps #step-5 {
+    background: url("/images/steps/5.gif") no-repeat; }
+    #steps #step-5:hover {
+      background: url("/images/steps/5-down.gif") no-repeat; }
+  #steps #step-6 {
+    background: url("/images/steps/6.gif") no-repeat; }
+    #steps #step-6:hover {
+      background: url("/images/steps/6-down.gif") no-repeat; }
+  #steps #step-7 {
+    background: url("/images/steps/7.gif") no-repeat; }
+    #steps #step-7:hover {
+      background: url("/images/steps/7-down.gif") no-repeat; }
+
+ul#side-steps {
+  float: left;
+  left: -20px;
+  position: absolute; }
+  ul#side-steps li a {
+    color: #003366 !important;
+    display: block;
+    font-weight: bold;
+    margin-top: 20px;
+    text-decoration: none !important; }
+  ul#side-steps li span {
+    color: #6a81a1; }
+
+table#overview h3 {
+  font-size: 14px; }
+table#overview tr td {
+  padding: 0 0 15px 0;
+  vertical-align: top; }
+
+#footer {
+  background: #6a81a1;
+  color: #fff;
+  font-size: 10px;
+  height: 20px;
+  line-height: 20px;
+  padding: 0 5px 0 0;
+  text-align: right; }
+
+.clear {
+  height: 10px;
+  clear: both; }
+
+.none {
+  display: none; }
+
+.left {
+  float: left;
+  margin-right: 20px; }
+
+.right {
+  float: right;
+  margin-left: 20px; }
+
+.snapshot {
+  display: none; }
+  .snapshot .partial-submit-button {
+    margin-left: 150px; }
+
+#tips {
+  float: left;
+  margin-left: -125px;
+  padding: 50px 0 0 0;
+  width: 100px; }
+
+.alert {
+  border: 1px solid #993333;
+  background: #ffcccc;
+  color: #993333;
+  float: right;
+  margin: 0 0 20px 0;
+  padding: 10px;
+  width: 570px; }
+
+.notice {
+  border: 1px solid #7f7f4d;
+  background: #ffff9a;
+  float: right;
+  margin: 0 0 20px 0;
+  padding: 10px;
+  width: 570px; }

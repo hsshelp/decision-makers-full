@@ -1,0 +1,36 @@
+%h2 Reporting
+
+= form_tag admin_aggregate_report_path do
+  %table.striped-right{:style => 'width: 600px'}
+    %tr
+      %th{:width => 150} Class
+      %td= select_tag 'class_id', options_for_select(Klass.all.collect{|k| [k.name, k.id]}), :include_blank => 'Select a class...'
+    %tr
+      %th Profile Type
+      %td= select_tag 'profile_id', options_for_select(Profile::TYPES), :include_blank => 'Select a profile type...'
+    %tr
+      %th Scholars
+      %td
+        %div#students (select a class first)
+
+  = submit_tag 'Generate Reports', :class => 'button', :style => 'width:465px'
+
+:javascript
+  $(function(){
+    $('#profile_id').change(function(){
+      getResults();
+    });
+  });
+
+  function getResults() {
+    var classId = $('#class_id').val();
+    var profileId = $('#profile_id').val();
+    var students = $('#students');
+
+    $.getJSON('#{admin_reporting_path('scholars')}?klass_id='+classId+'&profile_id='+profileId, function(data){
+      students.html('Only scholars with coded profiles are shown:<br /><br />');
+      $.each(data, function(i, value){
+        students.append('<label><input type="checkbox" name="scholar_ids[]" value="'+value.id+'" /><strong>'+value.first_name+' '+value.last_name+'</strong> - '+value.school+'</label><br />');
+      });
+    });
+  }
